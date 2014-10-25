@@ -28,7 +28,7 @@ padding-bottom:2em;
     overflow: hidden;
     /* The following styles are required for the "scroll-over" effect */
     width: 100%;
-    height: 88%;
+    height: 66%;
     top: 0;
     left: 0;
     position: fixed !important;
@@ -64,7 +64,7 @@ span.amp {
 .content-wrapper {
     /* These styles are required for the "scroll-over" effect */
     position: absolute;
-    top: 87%;
+    top: 67%;
     width: 100%;
     min-height: 12%;
     z-index: 2;
@@ -81,4 +81,5 @@ span.amp {
     text-transform: uppercase;
     letter-spacing: 0.1em;
     margin: 2em 0 1em;
+    text-align:center;
 }
