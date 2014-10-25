@@ -10,7 +10,7 @@ public class Servlet {
 
     public static void main(String[] args) throws UnknownHostException {
         System.out.println(Inet4Address.getLocalHost().getHostAddress());
-        externalStaticFileLocation("E:\\dev\\projects\\Web\\www");
+        externalStaticFileLocation("E:\\dev\\GitHub\\hackathon\\Web\\www");
 
         get("/hello", (req, res) -> "Hello World");
     }

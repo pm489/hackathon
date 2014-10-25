@@ -16,8 +16,10 @@ background-color:#ECECEC;
 background-color:white;
 }
 
-#title{
+
+.splash-head{
 color:white;
+padding-bottom:2em;
 }
 
 .splash-container {
@@ -52,6 +54,8 @@ color:white;
 .paddy{
 padding-right:100px;
 }
+
+
 
 span.amp {
     font-family: Baskerville, Palatino, "Book Antiqua", serif;
