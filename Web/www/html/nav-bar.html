@@ -5,11 +5,11 @@
             <li>
                 <a href="../index.html">Home</a>
             </li>
-            <li>
+            <li ng-hide="loggedIn">
                 <a href="">Sign up</a>
             </li>
             <li>
-                <a href=""> Log in</a>
+                <a ng-hide="loggedIn" href=""> Log in</a>
             </li>
         </ul>
     </div>
