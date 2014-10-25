@@ -83,3 +83,15 @@ span.amp {
     margin: 2em 0 1em;
     text-align:center;
 }
+
+.button-success{
+    color: white;
+    border-radius: 4px;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    background: #3dd0ac;
+}
+
+.button-center{
+     display:block;
+     text-align:center;
+}
