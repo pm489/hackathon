@@ -16,8 +16,10 @@ background-color:#ECECEC;
 background-color:white;
 }
 
-#title{
+
+.splash-head{
 color:white;
+padding-bottom:2em;
 }
 
 .splash-container {
@@ -26,7 +28,7 @@ color:white;
     overflow: hidden;
     /* The following styles are required for the "scroll-over" effect */
     width: 100%;
-    height: 88%;
+    height: 66%;
     top: 0;
     left: 0;
     position: fixed !important;
@@ -53,6 +55,8 @@ color:white;
 padding-right:100px;
 }
 
+
+
 span.amp {
     font-family: Baskerville, Palatino, "Book Antiqua", serif;
 }
@@ -60,7 +64,7 @@ span.amp {
 .content-wrapper {
     /* These styles are required for the "scroll-over" effect */
     position: absolute;
-    top: 87%;
+    top: 67%;
     width: 100%;
     min-height: 12%;
     z-index: 2;
@@ -77,4 +81,17 @@ span.amp {
     text-transform: uppercase;
     letter-spacing: 0.1em;
     margin: 2em 0 1em;
+    text-align:center;
+}
+
+.button-success{
+    color: white;
+    border-radius: 4px;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    background: #3dd0ac;
+}
+
+.button-center{
+     display:block;
+     text-align:center;
 }

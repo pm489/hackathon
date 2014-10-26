@@ -3,13 +3,13 @@
         <a class="pure-menu-heading"><h2> Bits<span class="amp">&</span>Bobs</h2></a>
         <ul>
             <li>
-                <a href="">Home</a>
+                <a href="../index.html">Home</a>
             </li>
-            <li>
+            <li ng-hide="loggedIn">
                 <a href="">Sign up</a>
             </li>
             <li>
-                <a href=""> Log in</a>
+                <a ng-hide="loggedIn" href=""> Log in</a>
             </li>
         </ul>
     </div>
