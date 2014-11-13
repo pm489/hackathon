@@ -1,18 +1,14 @@
+import spark.Request;
+import spark.Response;
+import spark.Route;
 
-    import spark.Request;
-    import spark.Response;
-    import spark.Route;
-
-    import java.net.Inet4Address;
+import java.net.Inet4Address;
 import java.net.UnknownHostException;
-    import java.util.List;
-    import java.util.Map;
-    import java.util.Optional;
+import java.util.Optional;
 
-
-    import static spark.Spark.get;
+import static spark.Spark.get;
 import static spark.SparkBase.externalStaticFileLocation;
-    import static spark.SparkBase.stop;
+import static spark.SparkBase.stop;
 
     public class Servlet {
 
