@@ -1,3 +1,5 @@
+package client;
+
 import argo.jdom.JsonRootNode;
 
 import java.math.BigDecimal;
@@ -10,7 +12,7 @@ public class Trade implements Jsonable {
     public final BigDecimal boughtAt;
     public final String status;
 
-    public Trade(String ticker, String name, Integer quanity, BigDecimal boughtAt, String status){
+    public Trade(String ticker, String name, Integer quanity, BigDecimal boughtAt, String status) {
 
         this.ticker = ticker;
         this.name = name;

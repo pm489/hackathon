@@ -1,12 +1,15 @@
 package ledger;
 
 import client.Trades;
+import infrastructure.MicrotypeValue;
 
-public final class Transactions {
-    private final Iterable<Transaction> transactions;
+import java.util.ArrayList;
+import java.util.List;
 
-    public Transactions(Iterable<Transaction> transactions) {
-        this.transactions = transactions;
+public final class Transactions extends MicrotypeValue<List<Transaction>> {
+
+    public Transactions(List<Transaction> transactions) {
+        super(new ArrayList<>(transactions));
     }
 
     public Trades asTrades() {

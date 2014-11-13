@@ -1,3 +1,4 @@
+import client.Jsonable;
 import client.Trades;
 
 import java.util.Optional;

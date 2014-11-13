@@ -1,4 +1,5 @@
-import junit.framework.TestCase;
+package client;
+
 import org.junit.Test;
 
 import java.math.BigDecimal;
