@@ -16,7 +16,13 @@
           <root url="file://$MODULE_DIR$/lib" />
         </CLASSES>
         <JAVADOC />
-        <SOURCES />
+        <SOURCES>
+          <root url="jar://$MODULE_DIR$/lib-src/commons-io-2.4-sources.jar!/" />
+          <root url="jar://$MODULE_DIR$/lib-src/jetty-all-9.2.2.v20140723-sources.jar!/" />
+          <root url="jar://$MODULE_DIR$/lib-src/junit-4.12-beta-3-sources.jar!/" />
+          <root url="jar://$MODULE_DIR$/lib-src/slf4j-api-1.7.7-sources.jar!/" />
+          <root url="jar://$MODULE_DIR$/lib-src/spark-core-2.0.0-sources.jar!/" />
+        </SOURCES>
         <jarDirectory url="file://$MODULE_DIR$/lib" recursive="false" />
       </library>
     </orderEntry>
