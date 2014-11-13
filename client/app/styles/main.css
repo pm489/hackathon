@@ -7,11 +7,9 @@ body {
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
 .marketing,
-.footer {
-  padding-left: 15px;
-  padding-right: 15px;
+.fill{
+    height: 100%;
 }
-
 /* Custom page header */
 .header {
   border-bottom: 1px solid #e5e5e5;
@@ -26,9 +24,13 @@ body {
 
 /* Custom page footer */
 .footer {
-  padding-top: 19px;
-  color: #777;
-  border-top: 1px solid #e5e5e5;
+    padding: 12px;
+    color: #777;
+    position: fixed;
+    bottom: 0;
+    height: 40px;
+    width: 100%;
+  /*border-top: 1px solid #e5e5e5;*/
 }
 
 /* Customize container */
@@ -64,10 +66,6 @@ body {
   /* Remove the padding we set earlier */
   .header,
   .marketing,
-  .footer {
-    padding-left: 0;
-    padding-right: 0;
-  }
   /* Space out the masthead */
   .header {
     margin-bottom: 30px;
@@ -85,7 +83,12 @@ tr.stock:hover {
     background-color: #a8c1dd;
     color: white;
 }
-
+div.loading {
+    height: 64px;
+    width: 64px;
+    margin-left: calc(50% - 32px);
+    background-image: url("/images/preloader_3.gif");
+}
 tr.stock{
     cursor: pointer;
     -webkit-transition: background-color 0.5s ease, color 0.5s ease; /* For Safari 3.1 to 6.0 */

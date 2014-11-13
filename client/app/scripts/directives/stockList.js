@@ -7,7 +7,7 @@
  * # stockList
  */
 angular.module('clientApp')
-    .directive('stockList', function () {
+    .directive('stockList', ['$timeout',function ($timeout) {
         return {
             templateUrl: 'views/stockList.html',
             restrict: 'AE',
@@ -17,9 +17,15 @@ angular.module('clientApp')
                 selectedStock: '='
             },
             link: function postLink(scope, element, attrs) {
-                scope.pickStock = function (ticker) {
-                    scope.selectedStock.ticker = ticker;
+                scope.pickStock = function (index) {
+                    scope.selectedStock = {};
+                    scope.selectedStock.loading = true;
+                    $timeout(function(){
+                        scope.selectedStock.loading = false;
+                        scope.selectedStock = scope.stocks[index];
+                    }, 1000);
+
                 }
             }
         };
-    });
+    }]);
