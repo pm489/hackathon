@@ -21,7 +21,7 @@ angular
             .when('/', {
                 redirectTo: '/exchange'
             })
-            .when('/portfolio', {
+            .when('/portfolio/:action?/:ticker?', {
                 templateUrl: 'views/portfolio.html',
                 controller: 'PortfolioCtrl'
             })
