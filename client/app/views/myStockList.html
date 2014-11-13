@@ -26,7 +26,7 @@
         <td>{{stock.ticker}}</td>
         <td>{{stock.name}}</td>
         <td>{{stock.spot}}</td>
-        <td>{{stock.boughtAt}}</td>
+        <td ng-class="{'pnl-loss': stock.spot < stock.boughtAt, 'pnl-profit':stock.spot > stock.boughtAt }">{{stock.boughtAt}}</td>
         <td>{{stock.quantity}}</td>
         <td>
             <span ng-show="stock.status=='Executed'"><span class="glyphicon glyphicon-ok-sign" style="padding-left: 3px;color: greenyellow;font-size: 25px" ></span></span>
