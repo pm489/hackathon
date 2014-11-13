@@ -9,7 +9,7 @@
 angular.module('clientApp')
     .directive('myCommissionList', function () {
         return {
-            templateUrl: 'views/myCommissionList',
+            templateUrl: 'views/myCommissionList.html',
             restrict: 'E',
             replace: true,
             scope:{

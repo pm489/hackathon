@@ -1,11 +1,30 @@
-<table class="table">
+<table class="table table-responsive">
     <tr>
         <th>
-            Ticker
+            Trade Id
+        </th>
+        <th>
+            Stock
+        </th>
+        <th>
+            Quantity
+        </th>
+        <th>
+            Status
+        </th>
+        <th>
+            Commission
         </th>
 
     </tr>
     <tr class="stock animate-back" ng-repeat="commission in myCommissions track by $index">
-
+        <td>{{commission.tradeId}}</td>
+        <td>{{commission.name}}</td>
+        <td>{{commission.quantity}}</td>
+        <td>
+            <span ng-show="commission.status=='done'"><span class="glyphicon glyphicon-ok-sign" style="padding-left: 3px;color: greenyellow;font-size: 25px" ></span></span>
+            <span ng-show="commission.status=='signing'"><div style="display: inline-block" class="pending-sign"></div></span>
+        </td>
+        <td class="pnl-profit">{{commission.commission}}</td>
     </tr>
 </table>

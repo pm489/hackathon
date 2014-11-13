@@ -1,4 +1,4 @@
-<table class="table">
+<table class="table table-responsive">
     <tr>
         <th>
             Ticker
@@ -22,7 +22,7 @@
             Profit
         </th>
     </tr>
-    <tr class="stock animate-back" ng-repeat="stock in myStocks track by $index">
+    <tr class="stock animate-back" ng-repeat="stock in myStocks track by $index" ng-click="doTrade(stock.ticker)">
         <td>{{stock.ticker}}</td>
         <td>{{stock.name}}</td>
         <td>{{stock.spot}}</td>
@@ -30,9 +30,9 @@
         <td>{{stock.quantity}}</td>
         <td>
             <span ng-show="stock.status=='Executed'"><span class="glyphicon glyphicon-ok-sign" style="padding-left: 3px;color: greenyellow;font-size: 25px" ></span></span>
-            <span ng-show="stock.status=='Pending Peer Match'"><div style="display: inline-block" class="pending"></div></span>
-            <span ng-show="stock.status=='Pending Sign'"><div style="display: inline-block" class="pending-sign"></div></span>
+            <span ng-show="stock.status=='Pending Peer Match'" title="pending match peer"><div style="display: inline-block" class="pending"></div></span>
+            <span ng-show="stock.status=='Pending Sign'" title="pending signing"><div style="display: inline-block" class="pending-sign"></div></span>
         </td>
-        <td>0</td>
+        <td ng-class="{'pnl-loss': calProfit(stock) < 0, 'pnl-profit':calProfit(stock) > 0 }">{{calProfit(stock)}}</td>
     </tr>
 </table>
