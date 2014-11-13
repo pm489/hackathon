@@ -1,0 +1,35 @@
+[{
+    ticker: "STE"
+    stockName:"super cool inc."
+    industry: "Tech"
+    price:10
+    qty:33
+},
+{
+    ticker:
+    stockName:
+    industry:
+    price:111
+    qty:33
+},
+{
+    ticker:
+    stockName:
+    industry:
+    price:21
+    qty:33
+},
+{
+    ticker:
+    stockName:
+    industry:
+    price:1000
+    qty:22
+},
+{
+    ticker:
+    stockName:
+    industry:
+    price:1111
+    qty:11
+}]

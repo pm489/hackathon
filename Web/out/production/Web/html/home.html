@@ -11,17 +11,18 @@
     <script type="text/javascript" src="../javascript/app.js"></script>
 
     <title>
-
         a small hello
     </title>
 </head>
-<body ng-controller="mainController" >
-<div  x-nav-Bar></div>
-<div ng-controller="menuController" x-side-menu></div>
+<body ng-controller="mainController">
+<div x-nav-Bar ver="loggedIn()"></div>
 
-<div id="main">
+<div id="layout">
+    <div ng-controller="menuController" x-side-menu></div>
 
+    <div id="main">
+
+    </div>
 </div>
-
 </body>
 </html>
