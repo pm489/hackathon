@@ -13,6 +13,6 @@ public final class InMemoryBitsNBobsServer implements BitsNBobsServer {
 
     @Override
     public void submit(Transaction transaction) throws InsufficientFundsException {
-
+        throw new UnsupportedOperationException("Mark didn't implement yet");
     }
 }
