@@ -9,7 +9,6 @@ function(sc,cookies,cookieStore){
       if(loggedIn){
             return true;
       }
-
         return false;
     }
 
@@ -25,16 +24,21 @@ app.controller('menuController',['$scope', function(innerSc){
         } else {
           return false;
         }
-
     }
 }])
 
 app.directive('navBar', function(){
       return{
         replace: 'true',
-        templateUrl: '../html/nav-bar.html'
+        link: function(scope, element, attrs){
+            scope.getNavBarUrl = function(){
+                return '../html/nav-bar-'+ scope.loggedIn() +'.html';
+            }
+        },
+        template: '<div ng-include="getNavBarUrl()"></div>'
       }
     });
+
 app.directive('sideMenu',function(){
     return{
         replace: 'true',
