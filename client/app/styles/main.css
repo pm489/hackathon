@@ -93,7 +93,7 @@ div.pending {
     height: 32px;
     width: 32px;
     /*margin-left: calc(50% - 16px);*/
-    background-image: url("/images/preloader_5.gif");
+    background-image: url("/images/preloader_7.gif");
 }
 div.pending-sign {
     height: 32px;
@@ -103,8 +103,8 @@ div.pending-sign {
 }
 tr.stock{
     cursor: pointer;
-    -webkit-transition: color 0.5s ease; /* For Safari 3.1 to 6.0 */
-    transition: color 0.5s ease;
+    -webkit-transition: background-color 0.5s ease,color 0.5s ease; /* For Safari 3.1 to 6.0 */
+    transition: background-color 0.5s ease,color 0.5s ease;
 }
 .pnl-loss{
     color:orangered;
@@ -112,10 +112,7 @@ tr.stock{
 .pnl-profit {
     color:yellowgreen;
 }
-.animate-back {
-    -webkit-transition: background-color 0.5s ease; /* For Safari 3.1 to 6.0 */
-    transition: background-color 0.5s ease;
-}
+
 .dotted {
     padding: 2.25em 1.6875em;
     background-image: -webkit-repeating-radial-gradient(center center, rgba(0,0,0,.2), rgba(0,0,0,.2) 1px, transparent 1px, transparent 100%);
@@ -144,6 +141,14 @@ li.order-book-item {
     margin-bottom: 10px;
 }
 li.order-book-item:hover {
-    background-color: #000000;
+    background-color: #000000
+}
+a.unstyled-link {
+    color: #000000;
+    display: block;
+    height: 100%;
+    width: 100%;
+}
+a.unstyled-link:hover {
     color: white;
 }

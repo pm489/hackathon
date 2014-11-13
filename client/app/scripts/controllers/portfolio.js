@@ -9,12 +9,11 @@
  */
 angular.module('clientApp')
     .controller('PortfolioCtrl', function ($scope, $rootScope, $routeParams) {
-        console.log($routeParams.action + ':' + $routeParams.ticker);
 
         $rootScope.page = 'portfolio';
 
         $scope.action = {
-            action: $routeParams.action,
+            buysell: $routeParams.action,
             ticker: $routeParams.ticker
         };
 
@@ -30,12 +29,9 @@ angular.module('clientApp')
         ];
 
 
-        //{name: 'UbiSoft Entertainment', ticker: 'UBI'},
-//        {name: 'Alibaba Group', ticker: 'BABA'},
-//        {name: 'Oracle Corporation', ticker: 'ORCL'},
         $scope.myCommissions = [
             {tradeId: '2132s13dad312dsE', name: 'UbiSoft Entertainment', quantity: 2000, commission: 20, date: '09:20:23.234 13-Nov-2014', status:'done'},
-            {tradeId: '2132s13dad312dsE', name: 'UbiSoft Entertainment', quantity: 2000, commission: 20, date: '09:20:23.234 13-Nov-2014', status: ''}
+            {tradeId: '452scvD0292s5621', name: 'Oracle Corporation', quantity: 100, commission: 4, date: '14:34:19.781 13-Nov-2014', status: 'signing'}
         ];
 
     });
