@@ -1,5 +1,6 @@
+package client;
+
 import java.util.List;
-import java.util.Set;
 
 public class Trades implements Jsonable {
 

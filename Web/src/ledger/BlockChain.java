@@ -27,7 +27,7 @@ public final class BlockChain {
         }});
     }
 
-    public Iterable<Transaction> transactionsFor(Address address) {
-        return chain.values().stream().flatMap(block -> block.transactionsFor(address).stream()).collect(toList());
+    public Transactions transactionsFor(Address address) {
+        return new Transactions(chain.values().stream().flatMap(block -> block.transactionsFor(address).stream()).collect(toList()));
     }
 }

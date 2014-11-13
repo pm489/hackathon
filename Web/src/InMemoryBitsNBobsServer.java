@@ -1,3 +1,4 @@
+import client.Trades;
 import ledger.Address;
 import ledger.BlockChain;
 import ledger.Transaction;
@@ -8,7 +9,7 @@ public final class InMemoryBitsNBobsServer implements BitsNBobsServer {
 
     @Override
     public Trades get(Address address) {
-        throw new UnsupportedOperationException("Mark didn't implement yet");
+        return blockChain.transactionsFor(address).asTrades();
     }
 
     @Override

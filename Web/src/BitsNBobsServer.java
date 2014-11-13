@@ -1,3 +1,4 @@
+import client.Trades;
 import ledger.Address;
 import ledger.Transaction;
 
