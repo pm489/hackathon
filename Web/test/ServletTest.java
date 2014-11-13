@@ -1,4 +1,3 @@
-import org.apache.commons.codec.binary.StringUtils;
 import org.apache.commons.io.IOUtils;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
@@ -7,7 +6,6 @@ import org.apache.http.impl.client.HttpClients;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import sun.net.www.http.HttpClient;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -23,7 +21,7 @@ public class ServletTest {
 
     @Before
     public void before() throws UnknownHostException, InterruptedException {
-        bits.start();
+        Servlet.start();
         Thread.sleep(2000l);
 
     }
