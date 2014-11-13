@@ -85,13 +85,17 @@
         <fail if="unittestfailure" message="Unit tests failed."/>
     </target>
 
-    <target name="distribute" depends="compile, test, determine-version">
+    <target name="distribute" description="Makes an executable JAR" depends="compile, test, determine-version">
         <echo message="Creating release structure"/>
         <property name="location.dist.binaries" value="${location.dist}/binaries/${version}"/>
         <delete dir="${location.dist}"/>
         <mkdir dir="${location.dist.binaries}"/>
 
-        <jar basedir="${location.classes}" destfile="${location.dist.binaries}/bitsnbobs-${version}.jar"/>
+        <jar basedir="${location.classes}" destfile="${location.dist.binaries}/bitsnbobs-${version}.jar">
+            <manifest>
+                <attribute name="Main-Class" value="data.Servlet"/>
+            </manifest>
+        </jar>
     </target>
 
     <target name="prepare-release" description="Builds an official release locally">
