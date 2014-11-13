@@ -1,0 +1,14 @@
+<table class="table">
+    <tr>
+        <th>
+            Ticker
+        </th>
+        <th>
+            Stock Name
+        </th>
+    </tr>
+    <tr class="stock" ng-repeat="stock in stocks track by $index" ng-click="pickStock(stock.ticker)">
+        <td>{{stock.ticker}}</td>
+        <td>{{stock.name}}</td>
+    </tr>
+</table>
