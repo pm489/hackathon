@@ -1,0 +1,106 @@
+<project name="bits&amp;bobs" default="compile">
+
+    <description>
+        Bits &amp; Bobs build file
+    </description>
+
+    <property name="location.lib" value="lib"/>
+    <property name="location.src" value="src"/>
+    <property name="location.src.test" value="test"/>
+
+    <property name="location.build" value="build"/>
+    <property name="location.classes" value="${location.build}/classes"/>
+    <property name="location.testclasses" value="${location.build}/test-classes"/>
+    <property name="location.integration-testclasses" value="${location.build}/integration-test-classes"/>
+    <property name="location.testresults" value="${location.build}/test-results"/>
+
+    <property name="location.dist" value="${location.build}/dist"/>
+
+    <path id="all-libs">
+        <fileset dir="${location.lib}">
+            <include name="**/*.jar"/>
+        </fileset>
+    </path>
+
+    <target name="determine-version">
+        <tstamp>
+            <format property="timestamp" pattern="yyyyMMddHHmm" locale="en" timezone="UTC"/>
+        </tstamp>
+        <property name="version" value="bitsnbobs-${timestamp}"/>
+    </target>
+
+
+    <target name="compile" description="compiles all classes">
+        <delete dir="${location.classes}"/>
+        <mkdir dir="${location.classes}"/>
+        <delete dir="${location.testclasses}"/>
+        <mkdir dir="${location.testclasses}"/>
+        <delete dir="${location.integration-testclasses}"/>
+        <mkdir dir="${location.integration-testclasses}"/>
+
+        <javac destdir="${location.classes}" debug="on" source="1.8" target="1.8" includeantruntime="false">
+            <src path="${location.src}"/>
+            <classpath refid="all-libs"/>
+        </javac>
+
+        <javac destdir="${location.testclasses}" debug="on" source="1.8" target="1.8" includeantruntime="false">
+            <src path="${location.src.test}"/>
+            <classpath location="${location.classes}"/>
+            <classpath refid="all-libs"/>
+        </javac>
+
+        <copy todir="${location.classes}">
+            <fileset dir="src"/>
+        </copy>
+
+        <echo message="Finished compile"/>
+    </target>
+
+    <target name="test" depends="test-unit" description="builds and runs all tests"/>
+
+    <target name="test-unit" depends="compile" description="builds and runs unit tests">
+        <delete dir="${location.testresults}"/>
+        <mkdir dir="${location.testresults}"/>
+        <junit printsummary="yes" errorproperty="unittestfailure" failureproperty="unittestfailure">
+            <classpath>
+                <pathelement location="${location.testclasses}"/>
+                <pathelement location="${location.classes}"/>
+                <path refid="all-libs"/>
+            </classpath>
+            <batchtest fork="yes" todir="${location.testresults}">
+                <fileset dir="${location.testclasses}">
+                    <include name="**/*Test.class"/>
+                </fileset>
+                <formatter type="xml"/>
+            </batchtest>
+        </junit>
+
+        <junitreport todir="${location.testresults}">
+            <fileset dir="${location.testresults}">
+                <include name="TEST-*.xml"/>
+            </fileset>
+            <report todir="${location.testresults}"/>
+        </junitreport>
+
+        <fail if="unittestfailure" message="Unit tests failed."/>
+    </target>
+
+    <target name="distribute" description="Makes an executable JAR" depends="compile, test, determine-version">
+        <echo message="Creating release structure"/>
+        <property name="location.dist.binaries" value="${location.dist}/binaries/${version}"/>
+        <delete dir="${location.dist}"/>
+        <mkdir dir="${location.dist.binaries}"/>
+
+        <jar basedir="${location.classes}" destfile="${location.dist.binaries}/bitsnbobs-${version}.jar">
+            <manifest>
+                <attribute name="Main-Class" value="data.Servlet"/>
+            </manifest>
+        </jar>
+    </target>
+
+    <target name="prepare-release" description="Builds an official release locally">
+        <property name="release" value="true"/>
+        <antcall target="distribute"/>
+    </target>
+
+</project>
