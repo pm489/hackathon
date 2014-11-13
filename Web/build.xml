@@ -7,11 +7,12 @@
     <property name="location.lib" value="lib"/>
     <property name="location.src" value="src"/>
     <property name="location.src.test" value="test"/>
+    <property name="location.src.test-support" value="test-support"/>
 
     <property name="location.build" value="build"/>
     <property name="location.classes" value="${location.build}/classes"/>
     <property name="location.testclasses" value="${location.build}/test-classes"/>
-    <property name="location.integration-testclasses" value="${location.build}/integration-test-classes"/>
+    <property name="location.testsupportclasses" value="${location.build}/test-support"/>
     <property name="location.testresults" value="${location.build}/test-results"/>
 
     <property name="location.dist" value="${location.build}/dist"/>
@@ -35,17 +36,24 @@
         <mkdir dir="${location.classes}"/>
         <delete dir="${location.testclasses}"/>
         <mkdir dir="${location.testclasses}"/>
-        <delete dir="${location.integration-testclasses}"/>
-        <mkdir dir="${location.integration-testclasses}"/>
+        <delete dir="${location.testsupportclasses}"/>
+        <mkdir dir="${location.testsupportclasses}"/>
 
         <javac destdir="${location.classes}" debug="on" source="1.8" target="1.8" includeantruntime="false">
             <src path="${location.src}"/>
             <classpath refid="all-libs"/>
         </javac>
 
+        <javac destdir="${location.testsupportclasses}" debug="on" source="1.8" target="1.8" includeantruntime="false">
+            <src path="${location.src.test-support}"/>
+            <classpath location="${location.classes}"/>
+            <classpath refid="all-libs"/>
+        </javac>
+
         <javac destdir="${location.testclasses}" debug="on" source="1.8" target="1.8" includeantruntime="false">
             <src path="${location.src.test}"/>
             <classpath location="${location.classes}"/>
+            <classpath location="${location.testsupportclasses}"/>
             <classpath refid="all-libs"/>
         </javac>
 
@@ -64,6 +72,7 @@
         <junit printsummary="yes" errorproperty="unittestfailure" failureproperty="unittestfailure">
             <classpath>
                 <pathelement location="${location.testclasses}"/>
+                <pathelement location="${location.testsupportclasses}"/>
                 <pathelement location="${location.classes}"/>
                 <path refid="all-libs"/>
             </classpath>
