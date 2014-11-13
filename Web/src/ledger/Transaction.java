@@ -3,11 +3,11 @@ package ledger;
 import java.util.Collection;
 
 public final class Transaction {
-    private final Collection<Input> inputs;
+    private final Input input;
     private final Collection<Output> outputs;
 
-    public Transaction(Collection<Input> inputs, Collection<Output> outputs) {
-        this.inputs = inputs;
+    public Transaction(Input input, Collection<Output> outputs) {
+        this.input = input;
         this.outputs = outputs;
     }
 }

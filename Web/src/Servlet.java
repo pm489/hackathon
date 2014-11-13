@@ -10,7 +10,7 @@ import static spark.Spark.get;
 import static spark.SparkBase.externalStaticFileLocation;
 import static spark.SparkBase.stop;
 
-    public class Servlet {
+public class Servlet {
 
     public static void main(String[] args) throws UnknownHostException {
         start();
@@ -25,24 +25,24 @@ import static spark.SparkBase.stop;
     }
 
     public void stopRunning() {
-            stop();
+        stop();
     }
 }
 
-    class Pending implements Route {
+class Pending implements Route {
 
 
-        private UsersTrades tradeList;
+    private UsersTrades tradeList;
 
-        @Override
-        public Object handle(Request request, Response response) {
-            Optional<String> params = Optional.ofNullable(request.params(":name"));
-            response.type("text");
+    @Override
+    public Object handle(Request request, Response response) {
+        Optional<String> params = Optional.ofNullable(request.params(":name"));
+        response.type("text");
 
-            if(!params.isPresent()){
-                return "Please specify a user Key";
-            }else{
-                return tradeList.getPendingFor(params.get());
-            }
+        if (!params.isPresent()) {
+            return "Please specify a user Key";
+        } else {
+            return tradeList.getPendingFor(params.get());
         }
     }
+}
