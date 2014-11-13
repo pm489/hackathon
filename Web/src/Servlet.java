@@ -5,6 +5,8 @@
 
     import java.net.Inet4Address;
 import java.net.UnknownHostException;
+    import java.util.List;
+    import java.util.Map;
     import java.util.Optional;
 
 
@@ -33,6 +35,9 @@ import static spark.SparkBase.externalStaticFileLocation;
 
     class Pending implements Route {
 
+
+        private UsersTrades tradeList;
+
         @Override
         public Object handle(Request request, Response response) {
             Optional<String> params = Optional.ofNullable(request.params(":name"));
@@ -41,8 +46,7 @@ import static spark.SparkBase.externalStaticFileLocation;
             if(!params.isPresent()){
                 return "Please specify a user Key";
             }else{
-                return "hello";
+                return tradeList.getPendingFor(params.get());
             }
-
         }
     }
