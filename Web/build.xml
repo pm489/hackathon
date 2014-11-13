@@ -93,7 +93,7 @@
 
         <jar basedir="${location.classes}" destfile="${location.dist.binaries}/bitsnbobs-${version}.jar">
             <manifest>
-                <attribute name="Main-Class" value="data.Servlet"/>
+                <attribute name="Main-Class" value="Servlet"/>
             </manifest>
         </jar>
     </target>
