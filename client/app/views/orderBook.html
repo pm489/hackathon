@@ -5,8 +5,8 @@
     </h2>
     <div class="loading" style="margin-top: 20%" ng-show="!selectedStock.ticker && selectedStock.loading"></div>
 
-    <div style="height:400px" ng-show="selectedStock.ticker" class="col-lg-12 order-book">
-        <div style="margin-top: 5px">{{selectedStock.ticker}}: {{selectedStock.name}}</div>
+    <div style="height:400px" ng-show="selectedStock.ticker" class="col-lg-12 order-book dotted">
+        <div class="dotted" style="margin-top: 5px">{{selectedStock.ticker}}: {{selectedStock.name}}</div>
         <div class="offer-lane col-lg-6" style="border-right: solid 1px #ddd;margin-top: 20px" >
             <ul class="list-unstyled">
                 <li style="text-align: center;margin-top: 10px">Offer</li>
