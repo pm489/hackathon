@@ -10,4 +10,8 @@ public final class Input extends MicrotypeValue<Address> {
     public static Input input(Address value) {
         return new Input(value);
     }
+
+    public Address address() {
+        return value;
+    }
 }

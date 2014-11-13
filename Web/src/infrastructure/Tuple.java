@@ -3,8 +3,8 @@ package infrastructure;
 import static java.util.Objects.requireNonNull;
 
 public final class Tuple<T, U> {
-    private final T left;
-    private final U right;
+    public final T left;
+    public final U right;
 
     private Tuple(T left, U right) {
         this.left = requireNonNull(left);
@@ -42,4 +42,5 @@ public final class Tuple<T, U> {
                 ", right=" + right +
                 '}';
     }
+
 }

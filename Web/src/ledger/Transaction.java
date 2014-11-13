@@ -1,13 +1,23 @@
 package ledger;
 
+import infrastructure.MicrotypeValue;
+import infrastructure.Tuple;
+
 import java.util.Collection;
 
-public final class Transaction {
-    private final Input input;
-    private final Collection<Output> outputs;
+import static infrastructure.Tuple.tuple;
+import static ledger.Outputs.outputs;
 
+public final class Transaction extends MicrotypeValue<Tuple<Input, Outputs>> {
     public Transaction(Input input, Collection<Output> outputs) {
-        this.input = input;
-        this.outputs = outputs;
+        super(tuple(input, outputs(outputs)));
+    }
+
+    public boolean hasOutputFor(Address address) {
+        return value.right.includes(address);
+    }
+
+    public Input input() {
+        return value.left;
     }
 }

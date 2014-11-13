@@ -13,4 +13,9 @@ public final class Output extends MicrotypeValue<Tuple<Address, Amount>> {
     public static Output output(Address address, Amount amount) {
         return new Output(tuple(address, amount));
     }
+
+    public Address address() {
+        return value.left;
+    }
+
 }

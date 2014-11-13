@@ -1,7 +1,7 @@
 package infrastructure;
 
 public abstract class MicrotypeValue<T> {
-    final T value;
+    protected final T value;
 
     protected MicrotypeValue(final T value) {
         if (value == null) {
