@@ -22,7 +22,7 @@ public class UsersTrades implements  Jsonable {
     public String toJson() {
         //
 
-        return
+        return "";
     }
 }
 
