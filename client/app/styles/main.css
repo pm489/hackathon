@@ -89,10 +89,32 @@ div.loading {
     margin-left: calc(50% - 32px);
     background-image: url("/images/preloader_3.gif");
 }
+div.pending {
+    height: 32px;
+    width: 32px;
+    /*margin-left: calc(50% - 16px);*/
+    background-image: url("/images/preloader_5.gif");
+}
+div.pending-sign {
+    height: 32px;
+    width: 32px;
+    /*margin-left: calc(50% - 16px);*/
+    background-image: url("/images/preloader_4.gif");
+}
 tr.stock{
     cursor: pointer;
-    -webkit-transition: background-color 0.5s ease, color 0.5s ease; /* For Safari 3.1 to 6.0 */
-    transition: background-color 0.5s ease, color 0.5s ease;
+    -webkit-transition: color 0.5s ease; /* For Safari 3.1 to 6.0 */
+    transition: color 0.5s ease;
+}
+.pnl-loss{
+    color:orangered;
+}
+.pnl-profit {
+    color:yellowgreen;
+}
+.animate-back {
+    -webkit-transition: background-color 0.5s ease; /* For Safari 3.1 to 6.0 */
+    transition: background-color 0.5s ease;
 }
 .dotted {
     padding: 2.25em 1.6875em;
@@ -103,4 +125,25 @@ tr.stock{
     -webkit-background-size: 3px 3px;
     -moz-background-size: 3px 3px;
     background-size: 3px 3px;
+}
+.stripped {
+    padding: 2.25em 1.6875em;
+    background-image: -webkit-repeating-linear-gradient(135deg, rgba(0,0,0,.3), rgba(0,0,0,.3) 1px, transparent 2px, transparent 2px, rgba(0,0,0,.3) 3px);
+    background-image: -moz-repeating-linear-gradient(135deg, rgba(0,0,0,.3), rgba(0,0,0,.3) 1px, transparent 2px, transparent 2px, rgba(0,0,0,.3) 3px);
+    background-image: -o-repeating-linear-gradient(135deg, rgba(0,0,0,.3), rgba(0,0,0,.3) 1px, transparent 2px, transparent 2px, rgba(0,0,0,.3) 3px);
+    background-image: repeating-linear-gradient(135deg, rgba(0,0,0,.3), rgba(0,0,0,.3) 1px, transparent 2px, transparent 2px, rgba(0,0,0,.3) 3px);
+    -webkit-background-size: 4px 4px;
+    -moz-background-size: 4px 4px;
+    background-size: 4px 4px;
+}
+li.order-book-item {
+    width: 100%;
+    height: 30px;
+    position: relative;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+li.order-book-item:hover {
+    background-color: #000000;
+    color: white;
 }

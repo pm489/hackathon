@@ -10,18 +10,18 @@
         <div class="offer-lane col-lg-6" style="border-right: solid 1px #ddd;margin-top: 20px" >
             <ul class="list-unstyled">
                 <li style="text-align: center;margin-top: 10px">Offer</li>
-                <li style="padding: 12px;margin-top:10px" ng-repeat="offer in randomOffers">
-                    <span style="position: absolute;left: 10px">{{offer.spot}}</span>
-                    <span style="position: absolute;right: 10px">*{{offer.quantity}}</span>
+                <li class="order-book-item" ng-repeat="offer in randomOffers" ng-click="buy()">
+                    <span style="position: absolute;left: 10px;padding: 5px">{{offer.spot}}</span>
+                    <span style="position: absolute;right: 10px;padding: 5px">x {{offer.quantity}}</span>
                 </li>
             </ul>
         </div>
         <div class="offer-lane col-lg-6" style="margin-top: 20px">
             <ul class="list-unstyled">
                 <li style="text-align: center; margin-top: 10px">Bid</li>
-                <li style="padding: 12px;margin-top:10px" ng-repeat="bid in randomOffers track by $index">
-                    <span style="position: absolute;left: 10px">{{bid.bidSpot}}</span>
-                    <span style="position: absolute;right: 10px">*{{bid.bidQuantity}}</span>
+                <li class="order-book-item" ng-repeat="bid in randomOffers track by $index" ng-click="sell()">
+                    <span style="position: absolute;left: 10px;padding: 5px">{{bid.bidSpot}}</span>
+                    <span style="position: absolute;right: 10px;padding: 5px">x {{bid.bidQuantity}}</span>
                 </li>
             </ul>
         </div>

@@ -16,7 +16,7 @@ angular.module('clientApp')
             {name: 'Credit Suisse', ticker: 'CS'},
             {name: 'UbiSoft Entertainment', ticker: 'UBI'},
             {name: 'Alibaba Group', ticker: 'BABA'},
-            {name: 'Microsoft Corporation', ticker: 'ORCL'},
+            {name: 'Oracle Corporation', ticker: 'ORCL'},
             {name: 'Electronic Arts Inc.', ticker: 'EA'},
             {name: 'Amazon.com Inc.', ticker: 'AMZN'}
         ];

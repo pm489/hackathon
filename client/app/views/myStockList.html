@@ -1,0 +1,38 @@
+<table class="table">
+    <tr>
+        <th>
+            Ticker
+        </th>
+        <th>
+            Stock Name
+        </th>
+        <th>
+            Spot
+        </th>
+        <th>
+            Trade Price
+        </th>
+        <th>
+            Quantity
+        </th>
+        <th>
+            Status
+        </th>
+        <th>
+            Profit
+        </th>
+    </tr>
+    <tr class="stock animate-back" ng-repeat="stock in myStocks track by $index">
+        <td>{{stock.ticker}}</td>
+        <td>{{stock.name}}</td>
+        <td>{{stock.spot}}</td>
+        <td ng-class="{'pnl-loss': stock.spot < stock.boughtAt, 'pnl-profit':stock.spot > stock.boughtAt }">{{stock.boughtAt}}</td>
+        <td>{{stock.quantity}}</td>
+        <td>
+            <span ng-show="stock.status=='Executed'"><span class="glyphicon glyphicon-ok-sign" style="padding-left: 3px;color: greenyellow;font-size: 25px" ></span></span>
+            <span ng-show="stock.status=='Pending Peer Match'"><div style="display: inline-block" class="pending"></div></span>
+            <span ng-show="stock.status=='Pending Sign'"><div style="display: inline-block" class="pending-sign"></div></span>
+        </td>
+        <td>0</td>
+    </tr>
+</table>

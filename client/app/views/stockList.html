@@ -7,7 +7,7 @@
             Stock Name
         </th>
     </tr>
-    <tr class="stock" ng-repeat="stock in stocks track by $index" ng-click="pickStock($index)">
+    <tr class="stock animate-back" ng-repeat="stock in stocks track by $index" ng-click="pickStock($index)">
         <td>{{stock.ticker}}</td>
         <td>{{stock.name}}</td>
     </tr>
