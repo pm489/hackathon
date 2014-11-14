@@ -19,13 +19,13 @@ angular.module('clientApp')
 
         $scope.myStocks = [
 
-            {name: 'Google', ticker: 'GOOGL', spot: 547.31, boughtAt: 550.02, quantity: 100000, status: 'Executed'},
-            {name: 'Apple', ticker: 'AAPL', spot: 111.25, boughtAt: 100.10, quantity: 2500, status: 'Executed'},
-            {name: 'Credit Suisse', ticker: 'CS', spot: 18.20, boughtAt: 17.05, quantity: 2000000, status: 'Executed'},
+            {tradeId:'9393sf923s1p3',name: 'Google', ticker: 'GOOGL', spot: 547.31, boughtAt: 550.02, quantity: 100000, status: 'Executed'},
+            {tradeId:'34nxkv934endov2', name: 'Apple', ticker: 'AAPL', spot: 111.25, boughtAt: 100.10, quantity: 2500, status: 'Executed'},
+            {tradeId:'48034cnds2dxs', name: 'Credit Suisse', ticker: 'CS', spot: 18.20, boughtAt: 17.05, quantity: 2000000, status: 'Executed'},
 
 
-            {name: 'Oracle Corporation', ticker: 'ORCL', spot: 20.76, boughtAt: 20.80, quantity: 7800, status: 'Pending Peer Match'},
-            {name: 'Electronic Arts Inc.', ticker: 'EA', spot: 219, boughtAt: 220, quantity: 6550, status: 'Pending Sign'}
+            {tradeId:'998236sf23ss', name: 'Oracle Corporation', ticker: 'ORCL', spot: 20.76, boughtAt: 20.80, quantity: 7800, status: 'Pending Peer Match'},
+            {tradeId:'88321ksbx220', name: 'Electronic Arts Inc.', ticker: 'EA', spot: 219, boughtAt: 220, quantity: 6550, status: 'Pending Sign'}
         ];
 
 

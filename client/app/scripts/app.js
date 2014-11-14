@@ -29,6 +29,10 @@ angular
                 templateUrl: 'views/exchange.html',
                 controller: 'ExchangeCtrl'
             })
+            .when('/transaction/:tradeId?', {
+                templateUrl: 'views/transaction.html',
+                controller: 'TransactionCtrl'
+            })
             .otherwise({
                 redirectTo: '/'
             });

@@ -28,7 +28,7 @@
         <td>{{stock.spot}}</td>
         <td ng-class="{'pnl-loss': stock.spot < stock.boughtAt, 'pnl-profit':stock.spot > stock.boughtAt }">{{stock.boughtAt}}</td>
         <td>{{stock.quantity}}</td>
-        <td>
+        <td ng-click="goToTransactionDetail(stock.tradeId)">
             <span ng-show="stock.status=='Executed'"><span class="glyphicon glyphicon-ok-sign" style="padding-left: 3px;color: greenyellow;font-size: 25px" ></span></span>
             <span ng-show="stock.status=='Pending Peer Match'" title="pending match peer"><div style="display: inline-block" class="pending"></div></span>
             <span ng-show="stock.status=='Pending Sign'" title="pending signing"><div style="display: inline-block" class="pending-sign"></div></span>

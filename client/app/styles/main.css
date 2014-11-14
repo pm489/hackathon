@@ -101,6 +101,11 @@ div.pending-sign {
     /*margin-left: calc(50% - 16px);*/
     background-image: url("/images/preloader_4.gif");
 }
+div.progress{
+    height: 15px;
+    /*margin-left: calc(50% - 16px);*/
+    background-image: url("/images/progress.gif");
+}
 tr.stock{
     cursor: pointer;
     -webkit-transition: background-color 0.5s ease,color 0.5s ease; /* For Safari 3.1 to 6.0 */
@@ -151,4 +156,32 @@ a.unstyled-link {
 }
 a.unstyled-link:hover {
     color: white;
+}
+
+.animation {
+    -webkit-transition: 1s;
+    transition: 1s;
+}
+.animation.ng-enter {
+    opacity: 0;
+    width: 0;
+}
+.animation.ng-leave {
+    opacity: 1;
+    width: 100%;
+}
+.animation.ng-enter.ng-enter-active {
+    opacity: 1;
+    width: 100%;
+}
+.animation.ng-leave.ng-leave-active {
+    opacity: 0;
+    width: 0;
+}
+div.progress-done{
+    border-radius: 7px;
+    width: 220px;
+    margin-top: 10px;
+    height: 15px;
+    background-color: yellowgreen;
 }

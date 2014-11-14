@@ -1,0 +1,48 @@
+<div class="transaction row">
+    <div class="col-lg-12 dotted" style="text-align: center;">Transaction status for {{tradeId}}</div>
+    <div class="col-lg-12" style="margin-top: 20px">
+        <div class="pull-left" style="margin-right: 30px;width:100px">
+            <i class="glyphicon glyphicon glyphicon-briefcase" style="margin-left: 35px;color: #337ab7;font-size: 30px"></i>
+            <div style="width:100px;text-align: center">{{stock.name}} x 200</div>
+        </div>
+
+
+        <div class="pull-left" style="margin-right: 30px;width:220px">
+            <div class="progress" style="width: 220px;margin-top: 10px" ng-show="status == 'Matching Peers...'"></div>
+            <div class="progress-done animation" style="margin-top: 10px" ng-if="status != 'Matching Peers...'"></div>
+            <div style="width:220px;text-align: center" ng-show="status == 'Matching Peers...'">{{status}}</div>
+        </div>
+
+
+
+        <div class="pull-left" style="margin-right: 30px;width:100px">
+            <i class="glyphicon glyphicon glyphicon-user" style="margin-left: 35px;color: #337ab7;font-size: 30px"></i>
+            <div class="animation" style="width:115px;text-align: center" ng-repeat="peer in peers track by peer.ip">{{peer.ip}} x {{peer.quantity}}</div>
+        </div>
+
+        <div class="pull-left" style="margin-right: 30px;width:220px" ng-show="peers.length == 2">
+            <div class="progress"  style="width: 220px;margin-top: 10px" ng-show="status2 == 'Signing...'" ></div>
+            <div class="progress-done animation" style="margin-top: 10px" ng-if="status2 != 'Signing...'"></div>
+            <div style="width:220px;text-align: center" ng-show="status2 == 'Signing...'">{{status2}}</div>
+        </div>
+
+        <div class="pull-left" style="margin-right: 30px;width:100px" ng-show="peers.length == 2">
+            <i class="glyphicon glyphicon glyphicon-file" style="margin-left: 35px;color: #337ab7;font-size: 30px"></i>
+
+            <div style="width:100px;text-align: center">{{status2}}</div>
+            <div style="width:100px;text-align: center" ng-show="status2 == 'Signed!'">Transaction complete.</div>
+        </div>
+
+        <div class="pull-left" style="margin-right: 30px;width:220px" >
+            <div class="progress" style="width: 220px;margin-top: 10px" ng-if="status3 == 'broadcast'&&broadcastProgress!=100"></div>
+            <div class="progress-done animation" style="margin-top: 10px" ng-if="broadcastProgress==100"></div>
+        </div>
+
+        <div class="pull-left" style="margin-right: 30px;width:100px" ng-show="status3 == 'broadcast'">
+            <i class="glyphicon glyphicon glyphicon-globe" style="margin-left: 35px;color: #337ab7;font-size: 30px"></i>
+            <div style="width:100px;text-align: center">Broadcasting ledger...</div>
+            <div style="width:100px;text-align: center">{{broadcastProgress}}%</div>
+        </div>
+
+    </div>
+</div>

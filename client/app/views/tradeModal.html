@@ -12,7 +12,7 @@
                 </select>
                 <input class="form-control" style=" display: inline-block;margin-top:10px;width:20%;" type="number" ng-model="action.quantity" placeholder="quantity" />
                 <span style="display: inline-block">{{selectedStock.name}} shares</span>
-                <span style="display: inline-block">@ {{selectedStock.spot}}p / share </span>
+                <span style="display: inline-block">@ <input type="number" class="form-control" style="width: 90px;display: inline" ng-model="selectedStock.spot"/>p / share </span>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

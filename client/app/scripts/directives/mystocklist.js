@@ -24,6 +24,10 @@ angular.module('clientApp')
                     $location.path('/portfolio/sell/'+ticker);
                 }
 
+                scope.goToTransactionDetail = function(tradeId){
+                    $location.path('/transaction/'+tradeId)
+                }
+
             }
         };
     });
